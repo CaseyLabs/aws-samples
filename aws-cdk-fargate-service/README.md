@@ -92,7 +92,7 @@ curl -i http://$LB_DNS
 #### POST /
 
 ```
-curl -i -x POST http://$LB_DNS
+curl -i -X POST http://$LB_DNS
 
 {"response":"This is a POST method."}
 ```
@@ -100,7 +100,7 @@ curl -i -x POST http://$LB_DNS
 #### PUT /
 
 ```
-curl -i -x PUT http://$LB_DNS
+curl -i -X PUT http://$LB_DNS
 
 {"response":"This is a PUT method."}
 ```
@@ -108,7 +108,7 @@ curl -i -x PUT http://$LB_DNS
 #### DELETE /
 
 ```
-curl -i -x DELETE http://$LB_DNS
+curl -i -X DELETE http://$LB_DNS
 
 {"response":"This is a DELETE method."}
 ```
