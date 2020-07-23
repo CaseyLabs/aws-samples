@@ -19,6 +19,9 @@ You will need the following installed on your desktop:
 - <a href="https://nodejs.org/en/download/">Node.js v10 or higher</a>
 
 
+**Note: this project will deploy to the DEFAULT profile defined in your AWS CLI configuration. Make sure you're deploying to the correct AWS account!**
+
+
 ## Building the project
 
 Open a Terminal and run:
@@ -38,7 +41,7 @@ npm install
 In Terminal, run:
 
 ```
-// Deploys the CloudFormation template:
+# Deploys the CloudFormation template:
 
 cdk deploy  
 ```
@@ -46,7 +49,7 @@ cdk deploy
 ## Afterwards
 
 ```
-// Destroys the infrastructure created by CDK:
+# Destroys the infrastructure created by CDK:
 
 cdk destroy  
 ```
