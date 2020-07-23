@@ -1,14 +1,26 @@
 # aws-cdk-fargate-service
 
-This repository contains an example TypeScript project for the [AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk). The project deploys:
+This repository contains an example TypeScript project for the [AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk).
 
-- An AWS VPC (2 public/private subnets across 2 availability zones with 1 NAT gateway)
-- AWS ECS/Fargate Cluster (with two-tasks running for high-availability)
+This project deploys a simple Node REST API app, with the following AWS infrastructure:
+
+- An AWS VPC
+    - 2 public/private subnets
+    - 2 availability zones
+    - 1 NAT gateway)
+
 - Application Load Balancer
-- Autoscaling rules
+
+- Security Groups
+
+- AWS ECS/Fargate Cluster
+     - with two-tasks running for high-availability
+     - Autoscaling rules for CPU/mem usage
+
 - AWS ECR + related AWS CodeBuild project
 
 ![Netork Diagram](https://github.com/CaseyLabs/aws-samples/blob/master/aws-cdk-fargate-service/image.png)
+
 
 ## Requirements
 
@@ -46,10 +58,69 @@ In Terminal, run:
 cdk deploy  
 ```
 
-## Afterwards
+When the CDK project successfully deploys, it will output the DNS name of the load balancer:
 
 ```
-# Destroys the infrastructure created by CDK:
+Outputs:
+AwsCdkStack.loadbalancerDNS = AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.amazonaws.com
+```
+
+In your Terminal, assign the DNS name to an environment variable:
+
+```
+lb_dns="AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.amazonaws.com"
+```
+
+## Testing the API
+
+The simplest way to test the API is browse to the load balancer in a web browser. For example:
+
+http://AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.amazonaws.com
+
+You can also test the API using the `curl` command in your Terminal:
+
+#### GET /
+
+```curl -i http://$lb_dns
+
+{"response":"This is a GET method."}
+
+```
+
+
+#### POST /
+
+```
+curl -i -x POST http://$lb_dns
+
+{"response":"This is a POST method."}
+```
+
+#### PUT /
+
+```
+curl -i -x PUT http://$lb_dns
+
+{"response":"This is a PUT method."}
+```
+
+#### DELETE /
+
+```
+curl -i -x DELETE http://$lb_dns
+
+{"response":"This is a DELETE method."}
+```
+
+
+
+In Terminal, run:
+
+
+## Cleaning Up
+
+```
+# Destroy the infrastructure created by CDK:
 
 cdk destroy  
 ```
