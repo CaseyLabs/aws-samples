@@ -183,8 +183,8 @@ export class AwsCdkStack extends cdk.Stack {
        //logging
      })
      .addPortMappings({
-       containerPort: 80,
-       hostPort: 80,
+       containerPort: 3030,
+       hostPort: 3030,
        protocol: ecs.Protocol.TCP
      });
 

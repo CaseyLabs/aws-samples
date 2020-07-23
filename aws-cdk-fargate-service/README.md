@@ -7,7 +7,7 @@ This project deploys a simple Node REST API app (running on Amazon Linux), with 
 - An AWS VPC
     - 2 public/private subnets
     - 2 availability zones
-    - 1 NAT gateway)
+    - 1 NAT gateway
 
 - Application Load Balancer
 
@@ -68,7 +68,7 @@ AwsCdkStack.loadbalancerDNS = AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.a
 In your Terminal, assign the DNS name to an environment variable:
 
 ```
-lb_dns="AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.amazonaws.com"
+LB_DNS="AwsCd-ALBAE-NHLIHWVROHJA-772658320.us-west-2.elb.amazonaws.com"
 ```
 
 ## Testing the API
@@ -82,7 +82,7 @@ You can also test the API using the `curl` command in your Terminal:
 #### GET /
 
 ```
-curl -i http://$lb_dns
+curl -i http://$LB_DNS
 
 {"response":"This is a GET method."}
 
@@ -92,7 +92,7 @@ curl -i http://$lb_dns
 #### POST /
 
 ```
-curl -i -x POST http://$lb_dns
+curl -i -x POST http://$LB_DNS
 
 {"response":"This is a POST method."}
 ```
@@ -100,7 +100,7 @@ curl -i -x POST http://$lb_dns
 #### PUT /
 
 ```
-curl -i -x PUT http://$lb_dns
+curl -i -x PUT http://$LB_DNS
 
 {"response":"This is a PUT method."}
 ```
@@ -108,7 +108,7 @@ curl -i -x PUT http://$lb_dns
 #### DELETE /
 
 ```
-curl -i -x DELETE http://$lb_dns
+curl -i -x DELETE http://$LB_DNS
 
 {"response":"This is a DELETE method."}
 ```
