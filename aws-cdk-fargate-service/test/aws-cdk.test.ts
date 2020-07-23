@@ -2,6 +2,10 @@ import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
 import * as AwsCdk from '../lib/aws-cdk-stack';
 
+
+// Sample tests:
+
+/*
 test('SQS Queue Created', () => {
     const app = new cdk.App();
     // WHEN
@@ -19,3 +23,5 @@ test('SNS Topic Created', () => {
   // THEN
   expectCDK(stack).to(haveResource("AWS::SNS::Topic"));
 });
+
+/*
