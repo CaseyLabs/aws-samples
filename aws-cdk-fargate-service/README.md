@@ -81,7 +81,8 @@ You can also test the API using the `curl` command in your Terminal:
 
 #### GET /
 
-```curl -i http://$lb_dns
+```
+curl -i http://$lb_dns
 
 {"response":"This is a GET method."}
 
@@ -113,11 +114,9 @@ curl -i -x DELETE http://$lb_dns
 ```
 
 
+## Cleaning Up
 
 In Terminal, run:
-
-
-## Cleaning Up
 
 ```
 # Destroy the infrastructure created by CDK:
