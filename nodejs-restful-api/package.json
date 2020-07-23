@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-restful-api",
+  "version": "1.0.0",
+  "description": "Example of Node.js REST API using Docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
