@@ -8,6 +8,7 @@ This repository contains an example TypeScript project for the [AWS Cloud Develo
 - Autoscaling rules
 - AWS ECR + related AWS CodeBuild project
 
+(https://github.com/CaseyLabs/aws-samples/blob/master/aws-cdk-fargate-service/image.png)
 
 ## Requirements
 
