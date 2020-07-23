@@ -38,11 +38,15 @@ npm install
 In Terminal, run:
 
 ```
-cdk deploy  // Deploys the CloudFormation template
+// Deploys the CloudFormation template:
+
+cdk deploy  
 ```
 
-# Afterwards
+## Afterwards
 
 ```
-$ cdk destroy  // Destroys the infrastructure created by CDK
+// Destroys the infrastructure created by CDK:
+
+cdk destroy  
 ```
