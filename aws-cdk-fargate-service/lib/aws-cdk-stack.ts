@@ -7,8 +7,6 @@ import autoscaling = require('@aws-cdk/aws-autoscaling');
 import iam = require('@aws-cdk/aws-iam');
 import codebuild = require("@aws-cdk/aws-codebuild");
 import ecr = require("@aws-cdk/aws-ecr");
-//import codepipeline_actions = require("@aws-cdk/aws-codepipeline-actions");
-//import codepipeline = require("@aws-cdk/aws-codepipeline");
 
 
 export class AwsCdkStack extends cdk.Stack {

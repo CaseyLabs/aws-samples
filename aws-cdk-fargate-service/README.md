@@ -2,7 +2,7 @@
 
 This repository contains an example TypeScript project for the [AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk).
 
-This project deploys a simple Node REST API app, with the following AWS infrastructure:
+This project deploys a simple Node REST API app (running on Amazon Linux), with the following AWS infrastructure:
 
 - An AWS VPC
     - 2 public/private subnets
