@@ -24,4 +24,4 @@ test('SNS Topic Created', () => {
   expectCDK(stack).to(haveResource("AWS::SNS::Topic"));
 });
 
-/*
+*/
