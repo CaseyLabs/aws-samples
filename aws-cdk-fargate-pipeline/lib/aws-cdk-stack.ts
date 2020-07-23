@@ -7,6 +7,9 @@ import autoscaling = require('@aws-cdk/aws-autoscaling');
 import iam = require('@aws-cdk/aws-iam');
 import codebuild = require("@aws-cdk/aws-codebuild");
 import ecr = require("@aws-cdk/aws-ecr");
+import codepipeline_actions = require("@aws-cdk/aws-codepipeline-actions");
+import codepipeline = require("@aws-cdk/aws-codepipeline");
+import ecrsync = require("@pgarbe/cdk-ecr-syn");
 
 
 export class AwsCdkStack extends cdk.Stack {
@@ -101,6 +104,7 @@ export class AwsCdkStack extends cdk.Stack {
       imageScanOnPush: true,
     });
 
+
     // AWS CodeBuild project (build sample app and push to ECR)
     // --------------------------------------------------------
     const buildProject = new codebuild.PipelineProject(this, "Build", {
@@ -139,7 +143,7 @@ export class AwsCdkStack extends cdk.Stack {
       }
       }),
     });
-    
+     
     
     // ----------------------------
     // CONTAINER ORCHESTRATION
@@ -178,7 +182,7 @@ export class AwsCdkStack extends cdk.Stack {
      // Associate container to task defintion:
      taskDefinition
      .addContainer("sample-app", {
-       image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample"),
+       image: ecs.ContainerImage.fromRegistry("caseylabs/nodejs-restful-api"),
        //logging
      })
      .addPortMappings({
