@@ -21,13 +21,28 @@ You will need the following installed on your desktop:
 
 ## Building the project
 
-After cloning this project, open a Terminal, change to the project's directory, and
+Open a Terminal and run:
 
 ```
-$ npm install -g aws-cdk typescript
-$ npm install
-$ cdk deploy  // Deploys the CloudFormation template
+git clone https://github.com/CaseyLabs/aws-samples.git
+
+cd aws-samples/aws-cdk-fargate-service
+
+npm install -g aws-cdk typescript
+
+npm install
+```
+
+## Deploying the CDK infrastructure
+
+In Terminal, run:
+
+```
+cdk deploy  // Deploys the CloudFormation template
+```
 
 # Afterwards
-$ cdk destroy
+
+```
+$ cdk destroy  // Destroys the infrastructure created by CDK
 ```
